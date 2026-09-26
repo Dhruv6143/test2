@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Taskly — a tiny to-do app</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="app-header">
+      <div class="logo">
+        <span class="logo-mark">✓</span>
+        <h1>Taskly</h1>
+      </div>
+      <p class="tagline">Small tasks, done one at a time.</p>
+    </header>
+
+    <form id="task-form" class="task-form" autocomplete="off">
+      <input
+        id="task-input"
+        type="text"
+        placeholder="What needs doing?"
+        maxlength="120"
+        aria-label="New task"
+      />
+      <button type="submit" class="btn-add">Add</button>
+    </form>
+
+    <div class="toolbar">
+      <div class="filters" role="tablist" aria-label="Filter tasks">
+        <button class="filter is-active" data-filter="all">All</button>
+        <button class="filter" data-filter="active">Active</button>
+        <button class="filter" data-filter="done">Done</button>
+      </div>
+      <button id="clear-done" class="btn-ghost" title="Remove all completed tasks">
+        Clear completed
+      </button>
+    </div>
+
+    <ul id="task-list" class="task-list"></ul>
+
+    <p id="empty-state" class="empty-state" hidden>
+      <span class="empty-emoji">🎉</span>
+      <span id="empty-message">Nothing here — add your first task above.</span>
+    </p>
+
+    <footer class="app-footer">
+      <span id="count-left">0 tasks left</span>
+      <span class="dot">·</span>
+      <span>Saved locally in your browser</span>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
